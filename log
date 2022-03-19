@@ -2,3 +2,32 @@ Sat Mar 19 17:27:05 HSP 2022:
  tests:  0|6
 total_score: 0/70
 3a9a19c
+Sat Mar 19 19:28:17 HSP 2022: 
+ list.c | 45 ++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 34 insertions(+), 11 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'nextList':
+list.c:42:17: error: expected expression before '>' token
+   return list - > current -> data;
+                 ^
+list.c: In function 'prevList':
+list.c:51:28: error: 'List {aka struct List}' has no member named 'prev'
+     list -> current = list -> prev;
+                            ^~
+list.c: In function 'pushCurrent':
+list.c:72:10: error: variable or field 'aux' declared void
+     void aux = list -> current -> data;
+          ^~~
+list.c:72:16: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+     void aux = list -> current -> data;
+                ^~~~
+list.c:75:35: error: comparison between pointer and integer [-Werror]
+     while(list -> current -> prev != aux){
+                                   ^~
+list.c: In function 'nextList':
+list.c:43:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+a9918aa
