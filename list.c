@@ -39,7 +39,7 @@ void * firstList(List * list) {
 
 void * nextList(List * list) {
     list -> current = list -> current -> next;
-  return list - > current -> data;
+  return list -> current -> data;
 }
 
 void * lastList(List * list) {
@@ -69,13 +69,13 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
-    void aux = list -> current -> data;
+    //void aux = list -> current -> data;
     list -> tail -> next = createNode(data);
     list -> current = list -> tail -> prev;
-    while(list -> current -> prev != aux){
+    //while(list -> current -> prev != aux){
         list -> current -> next -> data = list -> current -> data;
         list -> current = list -> current -> prev;
-    }
+    //}
 }
 
 void * popFront(List * list) {
