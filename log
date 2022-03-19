@@ -41,3 +41,8 @@ list.c:51:28: error: 'List {aka struct List}' has no member named 'prev'
                             ^~
 Compilation failed
 58dd02a
+Sat Mar 19 19:30:33 HSP 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+3f0d4a2
