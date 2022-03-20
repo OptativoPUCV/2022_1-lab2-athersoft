@@ -132,7 +132,9 @@ void * popCurrent(List * list) {
       nodo -> next-> prev = nodo -> prev;  
   }
   */
-  
+  if(nodo == list -> head){
+    list -> head = nodo -> next;
+  }
   if(list -> current -> next != NULL){
     list -> current = list -> current -> next;
   }else{
