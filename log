@@ -188,3 +188,21 @@ Sun Mar 20 14:01:35 HSP 2022:
  1 file changed, 1 insertion(+)
  tests:  0|0
 43291d6
+Sun Mar 20 15:37:34 HSP 2022: 
+ list.c | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'pushCurrent':
+list.c:99:8: error: 'current' undeclared (first use in this function)
+     if(current != NULL){
+        ^~~~~~~
+list.c:99:8: note: each undeclared identifier is reported only once for each function it appears in
+list.c: At top level:
+list.c:107:6: error: expected identifier or '(' before 'else'
+     }else{
+      ^~~~
+list.c:110:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+Compilation failed
+b910cc5
