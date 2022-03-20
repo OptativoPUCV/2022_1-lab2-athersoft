@@ -120,12 +120,13 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   Node *nodo = list->current; 
+  if (list->current == list->head) {
+    list->current = nodo -> next;
+    list->head = nodo -> next;          // Recuerda asignar la nueva cabeza y el nuevo nodo "actual"
+    list->current->prev = NULL; // Recuerda eliminar la cabeza anterior.
+  }
   if(list -> current -> next != NULL){
     list -> current = list -> current -> next;
-    if(list -> current -> prev ->prev == NULL){
-      list -> current -> prev = NULL;
-      list -> head = list -> current;
-    }
   }else{
     list -> current = list -> current -> prev;
   }
