@@ -19,15 +19,21 @@ struct List {
 
 typedef List List;
 
+//Node * createNode(void * data) {
+//    return NULL;
+  //}
 Node * createNode(void * data) {
-    return NULL;
-  }
+  Node *n = (Node*) calloc(1, sizeof(Node));
+  n -> data = data;
+  n -> next = NULL;
+  return n;
+}
 
 List * createList() {
     List* lista = (List* ) calloc(1,sizeof(List));
     lista -> head = NULL;
-    lista -> tail = NULL;
     lista -> current = NULL;
+    lista -> tail = NULL;
   return lista;
 }
 
