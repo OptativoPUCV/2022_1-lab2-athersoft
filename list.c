@@ -22,7 +22,7 @@ typedef List List;
 //Node * createNode(void * data) {
 //    return NULL;
   //}
-Node * createNode(void * data) {
+Node * createNode(void * data){
   Node *n = (Node*) calloc(1, sizeof(Node));
   n -> data = data;
   n -> next = NULL;
@@ -34,7 +34,7 @@ List * createList() {
     lista -> head = NULL;
     lista -> current = NULL;
     lista -> tail = NULL;
-  return lista;
+    return lista;
 }
 
 void * firstList(List * list) {
@@ -46,7 +46,7 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-  if(list -> current -> next && list -> current -> next -> data){
+  if(list -> current -> next != NULL){
     list -> current = list -> current -> next;
     return list -> current -> data;
   }else{
