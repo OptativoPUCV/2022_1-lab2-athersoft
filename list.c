@@ -19,9 +19,6 @@ struct List {
 
 typedef List List;
 
-//Node * createNode(void * data) {
-//    return NULL;
-  //}
 Node * createNode(void * data){
   Node *n = (Node*) calloc(1, sizeof(Node));
   n -> data = data;
@@ -46,12 +43,13 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-  if(list -> current -> next != NULL && list -> current != NULL){
-    list -> current = list -> current -> next;
-    return list -> current -> data;
-  }else{
-    return NULL;
+  if(list -> current != NULL){
+    if(list -> current -> next != NULL){
+      list -> current = list -> current -> next;
+      return list -> current -> data;
+    }
   }
+    return NULL;
 }
 
 void * lastList(List * list) {
