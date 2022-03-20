@@ -227,3 +227,25 @@ Sun Mar 20 16:00:22 HSP 2022:
  1 file changed, 16 insertions(+), 2 deletions(-)
  tests:  0|0
 a56af0a
+Sun Mar 20 16:02:19 HSP 2022: 
+ list.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'popCurrent':
+list.c:123:15: error: invalid initializer
+   Node curr = list -> current;
+               ^~~~
+list.c:141:10: error: incompatible type for argument 1 of 'free'
+     free(curr);
+          ^~~~
+In file included from test.c:2:0:
+c:\mingw\include\stdlib.h:487:39: note: expected 'void *' but argument is of type 'Node {aka struct Node}'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void free (void *);
+                                       ^~~~
+In file included from test.c:5:0:
+list.c:143:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+ce075eb
