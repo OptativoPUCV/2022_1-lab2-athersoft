@@ -106,22 +106,6 @@ void pushCurrent(List * list, void * data) {
       nodo -> prev = list -> current;
       list -> tail = nodo;
     }
-    //if(list -> current == list -> head){
-     // list -> head = list -> current;
-    //}
-    /*
-    if(list -> current != NULL){
-      if(list -> current -> next != NULL){
-        nodo -> next = list -> current -> next;
-      }
-      if(list -> current -> prev != NULL){
-        nodo -> prev = list -> current;
-      }
-      list -> current -> next = nodo;
-    }else{
-      list -> head = nodo;
-    }
-    */
 }
 
 void * popFront(List * list) {
@@ -135,6 +119,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+  /*
   if (!(list && list->head && list->current))
     return NULL;
   Node *curr = list->current;  
@@ -153,6 +138,16 @@ void * popCurrent(List * list) {
   }
   free(curr);
   return data;
+  */
+ if (list->current == list->head) {
+    list->head = list-> current ->next;  
+    list->current = list->current ->next;
+    list->current->prev = NULL; 
+  }else{}
+  list -> current = list -> current -> next;
+  list -> current -> prev = list -> current -> prev -> prev;
+  list -> current -> prev -> next = list -> current;
+}
 }
 
 void cleanList(List * list) {
