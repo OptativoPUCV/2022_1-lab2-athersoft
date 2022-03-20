@@ -102,3 +102,8 @@ list.c:81:10: error: 'List {aka struct List}' has no member named 'last'
           ^~
 Compilation failed
 032f37e
+Sun Mar 20 12:32:27 HSP 2022: 
+ list.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+ tests:  0|0
+27bc38d
