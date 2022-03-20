@@ -24,8 +24,7 @@ Node * createNode(void * data) {
   }
 
 List * createList() {
-    List* lista;
-    lista = (List* ) calloc(2,sizeof(List));
+    List* lista = (List* ) calloc(1,sizeof(List));
     lista -> head = NULL;
     lista -> tail = NULL;
     lista -> current = NULL;
@@ -50,8 +49,12 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
-  list -> current = list -> tail;
-  return list -> current -> data;
+  if(list -> tail && list -> tail -> data){
+    list -> current = list -> tail;
+    return list -> tail -> data;
+  }else{
+    return NULL;
+  }
 }
 
 void * prevList(List * list) {
@@ -60,7 +63,6 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, void * data) {
-    /*
     list -> current = list -> tail;
     list -> current -> next -> data = createNode(data);
     while (list-> current-> prev != NULL) {
@@ -68,7 +70,6 @@ void pushFront(List * list, void * data) {
         list -> current = list -> current -> prev;
     }
     list -> head -> data = data;
-    */
 }
 
 void pushBack(List * list, void * data) {
