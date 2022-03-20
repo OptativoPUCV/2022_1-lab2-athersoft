@@ -120,6 +120,8 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   Node *nodo = list->current; 
+  void *data = nodo->data;
+  /*
   if (list->current == list->head) {
     list->current = nodo -> next;
     list->head = nodo -> next;          // Recuerda asignar la nueva cabeza y el nuevo nodo "actual"
@@ -129,7 +131,8 @@ void * popCurrent(List * list) {
     if (nodo -> next) // Sin esto, "next" puede ser NULL (cola) y causar segfault.
       nodo -> next-> prev = nodo -> prev;  
   }
-  /*
+  */
+  
   if(list -> current -> next != NULL){
     list -> current = list -> current -> next;
   }else{
@@ -141,10 +144,9 @@ void * popCurrent(List * list) {
   if(nodo -> next != NULL){
     nodo -> next -> prev = nodo -> prev;
   }
-  */
   free(nodo);
 
-return NULL;
+return data;
 }
 
 void cleanList(List * list) {
