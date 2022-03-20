@@ -206,3 +206,14 @@ list.c:110:1: error: expected identifier or '(' before '}' token
  ^
 Compilation failed
 b910cc5
+Sun Mar 20 15:39:13 HSP 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function 'pushCurrent':
+list.c:99:8: error: 'current' undeclared (first use in this function)
+     if(current != NULL){
+        ^~~~~~~
+list.c:99:8: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+35723b4
