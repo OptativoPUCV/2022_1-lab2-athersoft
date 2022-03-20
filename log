@@ -217,3 +217,8 @@ list.c:99:8: error: 'current' undeclared (first use in this function)
 list.c:99:8: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 35723b4
+Sun Mar 20 15:39:31 HSP 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+ada4f57
