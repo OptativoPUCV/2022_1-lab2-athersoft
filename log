@@ -284,3 +284,8 @@ list.c:124:9: error: unused variable 'last' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 c4ff947
+Sun Mar 20 16:13:49 HSP 2022: 
+ list.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+258dd2c
