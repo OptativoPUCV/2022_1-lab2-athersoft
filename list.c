@@ -122,24 +122,21 @@ void * popBack(List * list) {
 void * popCurrent(List * list) {
   if (!(list && list->head && list->current))
     return NULL;
-  Node *curr = list->current;  // Nodo "actual", el que será eliminado.
-  Node *last = curr->prev;     // Nodo anterior al actual.
-  Node *next = curr->next;     // Nodo siguiente al actual.
+  Node *curr = list->current;  
+  Node *last = curr->prev;     
+  Node *next = curr->next;     
   void *data = curr->data;
 
-  // Verificamos que el actual sea la cabeza (aka head):
   if (list->current == list->head) {
-    list->current = next;
-    list->head = next;          // Recuerda asignar la nueva cabeza y el nuevo nodo "actual"
-    list->current->prev = NULL; // Recuerda eliminar la cabeza anterior.
+    list->head = list-> current ->next;  
+    list->current = list->current ->next;
+    list->current->prev = NULL; 
+  }else{
+    list->current = list -> current ->next;
+    if (next) 
+      list -> next->prev = list -> current ->prev;  
   }
-  // Si no es la cabeza, entonces o es la cola, o es algo del medio.
-  else {
-    list->current = next;
-    if (next) // Sin esto, "next" puede ser NULL (cola) y causar segfault.
-      next->prev = last;  
-  }
-  free(curr); // Luego de aislar este nodo, podemos eliminarlo.
+  free(curr);
   return data;
 }
 

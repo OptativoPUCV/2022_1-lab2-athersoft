@@ -295,3 +295,17 @@ Sun Mar 20 16:14:49 HSP 2022:
  tests:  10|2
 total_score: 45/70
 3e9bdac
+Sun Mar 20 16:42:30 HSP 2022: 
+ list.c | 25 +++++++++++--------------
+ 1 file changed, 11 insertions(+), 14 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'popCurrent':
+list.c:137:12: error: 'List {aka struct List}' has no member named 'next'
+       list -> next->prev = list -> current ->prev;
+            ^~
+list.c:126:9: error: unused variable 'last' [-Werror=unused-variable]
+   Node *last = curr->prev;
+         ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+3fb2f0e
