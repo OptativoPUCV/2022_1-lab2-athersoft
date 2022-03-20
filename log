@@ -86,3 +86,19 @@ Sun Mar 20 12:21:13 HSP 2022:
  1 file changed, 8 insertions(+), 6 deletions(-)
  tests:  0|0
 dd21f91
+Sun Mar 20 12:30:07 HSP 2022: 
+ list.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c:40:3: error: expected identifier or '(' before 'return'
+   return NULL;
+   ^~~~~~
+list.c:41:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+list.c: In function 'pushBack':
+list.c:81:10: error: 'List {aka struct List}' has no member named 'last'
+     list -> last = nodo;
+          ^~
+Compilation failed
+032f37e
