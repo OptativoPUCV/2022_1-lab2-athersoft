@@ -120,6 +120,9 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   Node *nodo = list->current; 
+  if(list -> current -> prev == NULL && list -> current -> next != NULL){
+    list -> head = list -> current -> next;
+  }
   if(list -> current -> next != NULL){
     list -> current = list -> current -> next;
     
@@ -131,9 +134,6 @@ void * popCurrent(List * list) {
   }
   if(nodo -> next != NULL){
     nodo -> next -> prev = nodo -> prev;
-  }
-  if (list -> head == NULL){
-    list -> head = list -> current;
   }
   free(nodo);
 
