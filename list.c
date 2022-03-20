@@ -45,13 +45,13 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
-  //list -> current = list -> tail;
-  //return list -> current -> data;
+  list -> current = list -> tail;
+  return list -> current -> data;
 }
 
 void * prevList(List * list) {
-  //list -> current = list -> current -> prev;
-  //return list -> current -> data;
+  list -> current = list -> current -> prev;
+  return list -> current -> data;
 }
 
 void pushFront(List * list, void * data) {
