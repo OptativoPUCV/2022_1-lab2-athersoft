@@ -46,3 +46,18 @@ Sat Mar 19 19:30:33 HSP 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 3f0d4a2
+Sun Mar 20 12:09:15 HSP 2022: 
+ list.c | 34 +++++++++++++++++++---------------
+ 1 file changed, 19 insertions(+), 15 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'lastList':
+list.c:50:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+list.c: In function 'prevList':
+list.c:55:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+b16da17

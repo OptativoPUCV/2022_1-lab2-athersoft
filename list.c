@@ -38,21 +38,24 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-    list -> current = list -> current -> next;
+    if(list -> current -> next != NULL){
+      list -> current = list -> current -> next;
+    }
   return list -> current -> data;
 }
 
 void * lastList(List * list) {
-    list -> current = list -> tail;
-  return list -> current -> data;
+  //list -> current = list -> tail;
+  //return list -> current -> data;
 }
 
 void * prevList(List * list) {
-    list -> current = list -> current -> prev;
-  return list -> current -> data;
+  //list -> current = list -> current -> prev;
+  //return list -> current -> data;
 }
 
 void pushFront(List * list, void * data) {
+    /*
     list -> current = list -> tail;
     list -> current -> next -> data = createNode(data);
     while (list-> current-> prev != NULL) {
@@ -60,21 +63,22 @@ void pushFront(List * list, void * data) {
         list -> current = list -> current -> prev;
     }
     list -> head -> data = data;
+    */
 }
 
 void pushBack(List * list, void * data) {
-    list -> current = list->tail;
-    list -> current -> next -> data = createNode(data);
-    pushCurrent(list,data);
+    //list -> current = list->tail;
+   // list -> current -> next -> data = createNode(data);
+   // pushCurrent(list,data);
 }
 
 void pushCurrent(List * list, void * data) {
     //void aux = list -> current -> data;
-    list -> tail -> next = createNode(data);
-    list -> current = list -> tail -> prev;
+   // list -> tail -> next = createNode(data);
+   // list -> current = list -> tail -> prev;
     //while(list -> current -> prev != aux){
-        list -> current -> next -> data = list -> current -> data;
-        list -> current = list -> current -> prev;
+    //    list -> current -> next -> data = list -> current -> data;
+    //    list -> current = list -> current -> prev;
     //}
 }
 
@@ -89,10 +93,10 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-    list -> current -> prev -> next = list -> current -> next;
-    list -> current -> next -> prev = list -> current -> prev;
-    list -> current = NULL;
-    list -> current = list -> head;
+    //list -> current -> prev -> next = list -> current -> next;
+   // list -> current -> next -> prev = list -> current -> prev;
+    //list -> current = NULL;
+    //list -> current = list -> head;
   return NULL;
 }
 
