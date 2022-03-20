@@ -266,3 +266,21 @@ Sun Mar 20 16:11:48 HSP 2022:
  tests:  10|2
 total_score: 45/70
 20534aa
+Sun Mar 20 16:13:13 HSP 2022: 
+ list.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+In file included from test.c:5:0:
+list.c: In function 'popCurrent':
+list.c:138:20: error: 'tail' undeclared (first use in this function)
+       next->prev = tail;
+                    ^~~~
+list.c:138:20: note: each undeclared identifier is reported only once for each function it appears in
+list.c:126:9: error: unused variable 'data' [-Werror=unused-variable]
+   void *data = curr->data;
+         ^~~~
+list.c:124:9: error: unused variable 'last' [-Werror=unused-variable]
+   Node *last = curr->prev;     // Nodo anterior al actual.
+         ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+c4ff947
