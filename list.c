@@ -120,10 +120,12 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+  if (!(list && list->head && list->current))
+    return NULL;
   Node *curr = list->current;  // Nodo "actual", el que será eliminado.
   Node *last = curr->prev;     // Nodo anterior al actual.
   Node *next = curr->next;     // Nodo siguiente al actual.
-  //void *data = curr->data;
+  void *data = curr->data;
 
   // Verificamos que el actual sea la cabeza (aka head):
   if (list->current == list->head) {
@@ -138,7 +140,7 @@ void * popCurrent(List * list) {
       next->prev = last;  
   }
   free(curr); // Luego de aislar este nodo, podemos eliminarlo.
-  return NULL;
+  return data;
 }
 
 void cleanList(List * list) {
